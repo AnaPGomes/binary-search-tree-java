@@ -149,5 +149,36 @@ public class ArvoreBinariaDeBusca <X extends Comparable<X>>
 	    return true;
 	}
 	
-	// faça os demais métodos obrigatórios incluindo os "implements" apropriados
+
+
+
+    @Override
+    public int hashCode ()
+    {
+        return hashCode(this.raiz);
+    }
+
+
+    private int hashCode (No no)
+    {
+        if (no == null)
+            return 0;
+
+        int resultado = no.getInfo().hashCode();//hashcode do nó especifico
+
+        resultado = 31 * resultado + hashCode(no.getEsq());
+        resultado = 31 * resultado + hashCode(no.getDir());
+
+        return resultado;
+
+		
+    }
+
+	    @Override
+    public ArvoreBinariaDeBusca<X> clone ()
+    {
+        return new ArvoreBinariaDeBusca<X>(this);
+    }
+
+	
 } // fim da classe ArvoreBinariaDeBusca
