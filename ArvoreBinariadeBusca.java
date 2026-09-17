@@ -143,16 +143,25 @@ public class ArvoreBinariaDeBusca <X extends Comparable<X>>
             atual = atual.getDir();
     }
 
-	if(atual.getDir==null|| atual.getEsq==null){
-		if(anterior.getDir==atual){
-			anterior.getDir==null
+	if(atual.getDir()==null|| atual.getEsq()==null){
+		if(anterior.getDir()==atual){
+			anterior.getDir()==null
 		}
-		if(anterior.getEsq==atual){
-			antetrior.getEsq==null
+		if(anterior.getEsq()==atual){
+			antetrior.getEsq()==null
 		}
+		
 	}
 
-	if(atual.getDir!=null & atual.getEsq!=null){
+
+	if(atual.getDir()!=null & atual.getEsq()!=null){
+		No folha= null;
+		while (atual.getDir()!=null){
+			folha=atual.getDir() 
+		}
+		atual.setInfo(folha.getInfo())
+		
+		
 		
 	}
 
