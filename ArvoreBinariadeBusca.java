@@ -118,6 +118,37 @@ public class ArvoreBinariaDeBusca <X extends Comparable<X>>
             }
         }
     }
+
+
+	public void excluaUmItem(X i) throws Exception
+{
+    if (i == null)
+        throw new Exception("Informacao ausente");
+
+    No atual = this.raiz;
+    No anterior = null;
+
+    while (atual != null)
+    {
+        int comparacao = i.compareTo(atual.getInfo());
+
+        if (comparacao == 0)
+            break;
+
+        anterior = atual;
+
+        if (comparacao < 0)
+            atual = atual.getEsq();
+        else
+            atual = atual.getDir();
+    }
+
+    if (atual == null)
+        throw new Exception("Item inexistente");
+
+   //falta a exclusao aqui
+}
+	
     
     public boolean temOItem (X i) throws Exception
     {
